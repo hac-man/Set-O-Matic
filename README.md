@@ -5,11 +5,12 @@
 
 <br />
 <div align="center">
-  <img src="images/SetOMatic.png" alt="Set-O-Matic logo">
+  <img src="images/SetOMatic.png" alt="Set-O-Matic logo" width="128">
   <h1 align="center">Set-O-Matic</h1>
 
-  <p align="center">
+  <p align="center"><strong>
     Simple strongly-typed settings manager
+  </strong>
   </p>
 </div>
 
