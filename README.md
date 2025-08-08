@@ -52,7 +52,7 @@ Getting started with Set-O-Matic is simple:
 
 ### Prerequisites
 
-Set-O-Matic works with any .Net Framework project in any Visual Studio version that supports T4 templates. No additional software is required. 
+Set-O-Matic works with any .Net Framework project in any Visual Studio version that supports T4 templates and uses a Web.config or App.config file. No additional software is required. 
 
 ### Installation
 
