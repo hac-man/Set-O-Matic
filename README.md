@@ -2,9 +2,10 @@
 <a id="readme-top"></a>
 <!-- PROJECT SHIELDS -->
 <!-- PROJECT LOGO -->
+
 <br />
 <div align="center">
-
+  <img src="images/SetOMatic.png" alt="Set-O-Matic logo">
   <h1 align="center">Set-O-Matic</h1>
 
   <p align="center">
@@ -54,7 +55,7 @@ Set-O-Matic works with any .Net Framework project in any Visual Studio version t
 
 ### Installation
 
-Install the Latest Set-O-Matic package using the NuGet CLI ( `$ dotnet add package SetOMatic --version 1.0.0.7` ) or NuGet Package Manager. 
+Install the Latest [Set-O-Matic package](https://www.nuget.org/packages/SetOMatic/) using the NuGet CLI ( `$ dotnet add package SetOMatic --version 1.0.0.7` ) or NuGet Package Manager. 
 
 The needed Set-O-Matic class files (`Settings.cs` and `SetOMatic.cs`) will be created automatically in a new Settings folder in the root of the project. 
 
@@ -86,6 +87,6 @@ and selecting _`Run custom tool`:_
 
 <img src="images/RunCustomTool.png" alt="Updating Settings">
 
-The Settings.cs and SetOMatic.cs files will be updated with the new settings.
+The `Settings.cs` and `SetOMatic.cs` files will be updated with the new settings.
 
 
