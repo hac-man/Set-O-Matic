@@ -39,6 +39,7 @@ Set-O-Matic is a simple set of T4 templates that, when added to any .Net Framewo
 * Type-checking at application startup makes it easy to catch invalid values
 * Having strongly typed settings eliminates the need to cast settings throughout the application to match the type they are being used for
 * The ability to select any setting from IntelliSense greatly reduces the chances of "fat-finger" errors when referencing a setting
+* No dependencies to be deployed. All necessary functionality is included in complied application file (.exe)
 * Overall robustness of application code is increased due to fewer opportunities for errors
   
 *Examples:*
