@@ -68,7 +68,11 @@ Set-O-Matic works with any .Net Framework project in any Visual Studio version t
 
 Install the Latest [Set-O-Matic package](https://www.nuget.org/packages/SetOMatic/) from NuGet.org using the NuGet CLI ( `$ dotnet add package SetOMatic --version 1.0.0.7` ) or Visual Studio's Package Manager. 
 
-The Set-O-Matic class files (`Settings.cs` and `SetOMatic.cs`) will be created automatically in a new Settings folder in the root of the project. The Settings object can then immeidiatly be referenced in code and will contain all current settings and connection strings defined in the application's App.config or Web.config file.
+### Configuration
+
+The Set-O-Matic class files (`Settings.cs` and `SetOMatic.cs`) will be created automatically in a new `Settings` folder in the root of the project. The `Settings` object can then immeidiatly be referenced in code and will contain all current settings and connection strings defined in the application's App.config or Web.config file.
+
+No additiional configuration is needed
 
 <!-- USAGE EXAMPLES -->
 ### Usage
@@ -107,6 +111,4 @@ and selecting Run custom tool`
 
 The `Settings.cs` and `SetOMatic.cs` files will be updated with the new settings.
 
-There is no need to regenerate the Settings.tt class after modifying setting *values* since they are loaded dynamically at runtime
-
-
+There is no need to run the custom tool after modifying setting *values* only since they are loaded dynamically at runtime
