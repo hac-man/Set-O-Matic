@@ -18,9 +18,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About Set-O-Matic
 
-As Visual Studio has evolved, the built-in SettingsManager library has fallen far behind in functionality. While nearly all other aspects of code development have been integrated into Intellisense and have become strongly-typed, application settings are still only accessible by default as strings which are not visible via Intellisense. 
+As Visual Studio has evolved, the built-in SettingsManager library has fallen far behind in functionality. While nearly all other aspects of code development have been integrated into Intellisense and have become strongly-typed, application settings are still only accessible by default as strings which are not visible via Intellisense. Newer .Net implementations have built-in mapping for configuration settings, but Framework projects still lack this basic tool. Until now. 
 
-Set-O-Matic is a simple set of T4 templates that, when added to any .Net Framework project, automatically creates a strongly-typed Settings class that is dynamically loaded with values from App.config or Web.config at runtime. 
+Set-O-Matic is a simple set of T4 templates that, when added to any .Net Framework project via its package installation, automatically creates a strongly-typed Settings class that is dynamically loaded with values from App.config or Web.config at runtime. 
 
 ## Why use Set-O-Matic?
 * Strongly-typed application settings help prevent runtime errors by allowing the compiler to check setting types at compile time
@@ -42,12 +42,15 @@ Set-O-Matic is a simple set of T4 templates that, when added to any .Net Framewo
 * No dependencies to be deployed. All necessary functionality is included in complied application file (.exe)
 * Overall robustness of application code is increased due to fewer opportunities for errors
   
-*Examples:*
+**Config setting to Settings property Examples:**
 
 `<add name="Active" value="true">` becomes `public bool Active {get; set;}`
 
+**Usage:** `if (Settings.Active){...}`
+
 `<add name="CutoffDate" value="01/01/2025">` becomes `public DateTime CutoffDate {get; set;}`
-     
+
+**Usage:** `DateTime endDt = Settings.CutoffDate;`
 
 
 <!-- GETTING STARTED -->
