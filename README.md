@@ -18,7 +18,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About Set-O-Matic
 
-As Visual Studio has evolved, the built-in SettingsManager library has fallen far behind in functionality. While nearly all other aspects of code development have been integrated into Intellisense and have become strongly-typed, application settings are still only accessible by default as strings which are not visible via Intellisense. Newer .Net implementations have built-in mapping for configuration settings, but Framework projects still lack this basic tool. Until now. 
+As Visual Studio has evolved, the built-in SettingsManager library for .Net Framework projects has fallen far behind in functionality. While nearly all other aspects of code development have been integrated into Intellisense and have become strongly-typed, application settings are still only accessible by default as strings which are not visible via Intellisense. Newer .Net implementations have built-in mapping for configuration settings, but Framework projects still lack this basic tool. Until now. 
 
 Set-O-Matic is a simple set of T4 templates that, when added to any .Net Framework project via its package installation, automatically creates a strongly-typed Settings class that is dynamically loaded with values from App.config or Web.config at runtime. 
 
