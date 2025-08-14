@@ -62,41 +62,42 @@ namespace <#=fileNamespace#>
             {                   
                 var SettingsProp = typeof(Settings).GetNestedType(setting.Key).GetProperty(setting.Value.Key.Replace('.', '_'));
                 if (SettingsProp != null)
-                {       //get matching setting
+                {       
                         var match = _settings.Where(c => c.Key == setting.Key && c.Value.Key == setting.Value.Key).FirstOrDefault();
-                        // cast values and set properties
-                        switch (SettingsProp.PropertyType.Name)
+                        if (match.Value.Value != null)
                         {
-                            case "String":
-                                SettingsProp.SetValue(null, match.Value.Value.ToString());
-                                break;
-                            case "Int32":
-                                if (int.TryParse(match.Value.Value.ToString(), out int intValue))
-                                    SettingsProp.SetValue(null, intValue);
-                                else
-                                    throw new InvalidCastException($"Invalid Int32 format for setting '{setting}': {match.Value.Value.ToString()}");
-                                break;
-                            case "Boolean":
-                                if (bool.TryParse(match.Value.Value.ToString(), out bool boolValue))
-                                    SettingsProp.SetValue(null, boolValue);
-                                else
-                                    throw new InvalidCastException($"Invalid Boolean format for setting '{setting}': {match.Value.Value.ToString()}");
-                                break;
-                            case "DateTime":
-                                if (DateTime.TryParse(match.Value.Value.ToString(), out DateTime dateTimeValue))
-                                    SettingsProp.SetValue(null, dateTimeValue);
-                                else
-                                    throw new InvalidCastException($"Invalid DateTime format for setting '{setting}': {match.Value.Value.ToString()}");
-                                break;
-                            case "Double":
-
-                                if (double.TryParse(match.Value.Value.ToString(), out double doubleValue))
-                                    SettingsProp.SetValue(null, doubleValue);
-                                else
-                                    throw new InvalidCastException($"Invalid Double format for setting '{setting}': {match.Value.Value.ToString()}");
-                                break;
-                            default:
-                               throw new InvalidCastException($"Unsupported type '{SettingsProp.PropertyType.Name}' for setting '{setting}'. Skipping.");
+                            switch (SettingsProp.PropertyType.Name)
+                            {
+                                case "String":
+                                    SettingsProp.SetValue(null, match.Value.Value.ToString());
+                                    break;
+                                case "Int32":
+                                    if (int.TryParse(match.Value.Value.ToString(), out int intValue))
+                                        SettingsProp.SetValue(null, intValue);
+                                    else
+                                        throw new InvalidCastException($"Invalid Int32 format for setting '{setting}': {match.Value.Value.ToString()}");
+                                    break;
+                                case "Boolean":
+                                    if (bool.TryParse(match.Value.Value.ToString(), out bool boolValue))
+                                        SettingsProp.SetValue(null, boolValue);
+                                    else
+                                        throw new InvalidCastException($"Invalid Boolean format for setting '{setting}': {match.Value.Value.ToString()}");
+                                    break;
+                                case "DateTime":
+                                    if (DateTime.TryParse(match.Value.Value.ToString(), out DateTime dateTimeValue))
+                                        SettingsProp.SetValue(null, dateTimeValue);
+                                    else
+                                        throw new InvalidCastException($"Invalid DateTime format for setting '{setting}': {match.Value.Value.ToString()}");
+                                    break;
+                                case "Double":
+                                    if (double.TryParse(match.Value.Value.ToString(), out double doubleValue))
+                                        SettingsProp.SetValue(null, doubleValue);
+                                    else
+                                        throw new InvalidCastException($"Invalid Double format for setting '{setting}': {match.Value.Value.ToString()}");
+                                    break;
+                                default:
+                                   throw new InvalidCastException($"Unsupported type '{SettingsProp.PropertyType.Name}' for setting '{setting}'. Skipping.");
+                            }
                         }
                     }
                 }
@@ -140,7 +141,7 @@ namespace <#=fileNamespace#>
                             if (cNode.Name == "value")
                             {
                                 if (string.IsNullOrEmpty(cNode.Value))
-									throw new Exception("Value attribute is required for 'add' elements.");
+									value = null;
                                 else
                                     value = cNode.Value;
                             }
@@ -153,9 +154,7 @@ namespace <#=fileNamespace#>
                             }
                             if (cNode.Name == "connectionString")
                             {
-                                if (string.IsNullOrEmpty(cNode.Value))
-                                    throw new Exception($"Value attribute is required for {cNode.Name}.");
-                                else
+                                if (!string.IsNullOrEmpty(cNode.Value))
                                     value = cNode.Value;
                             }
                         }
