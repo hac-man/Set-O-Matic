@@ -35,6 +35,7 @@ Set-O-Matic is a simple set of T4 templates that, when added to any .Net Framewo
 * Automatically loads the current configuration file setting values at runtime into the Settings object
 * Allows the use of IntelliSense to reference all application settings
 * Provides a connectionString child class(es) making all connection strings available via the Settings class
+* Supports custom configuration sections without the need to add any supporting code
 * Seamlessly handles transformed config files since values are loaded at runtime
 * Type-checking at application startup makes it easy to catch invalid values
 * Having strongly typed settings eliminates the need to cast settings throughout the application to match the type they are being used for
