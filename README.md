@@ -91,10 +91,12 @@ No additiional configuration is needed
 Settings that are contained in the *appSettings* section of the config file can be accessed using _`Settings.appSettings.`_
 Custom application settings sections can be accessed using _`Settings.[custom_section_name].`_ :
 
-  <img src="images/CustomSectionConfig.png" alt="Updating Settings">
-  <img src="images/CustomSection.png" alt="Updating Settings">
+  <img src="images/CustomSectionConfig.png" alt="Custom Section">
+  <img src="images/CustomSection.png" alt="Custom Section">
 
-Connection strings contained in the `connectionStrings` section of the config file can be accessed using _`Settings.connectionStrings.`_
+Unlike when using .Net's ConfigurationManager class, no custom section code is required to access custom sections defined in the config file.
+
+**Connection strings** contained in the `connectionStrings` section of the config file can be accessed using _`Settings.connectionStrings.`_
 Custom connection string sections can be accessed using `Settings.[custom connection string section name].`
 
   <img src="images/connectionString.png" alt="Updating Settings">
