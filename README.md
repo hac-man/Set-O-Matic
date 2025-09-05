@@ -17,7 +17,23 @@
 
 Set-O-Matic is a simple set of T4 templates that automatically creates a strongly-typed Settings class that is dynamically loaded with values from App.config or Web.config at runtime. 
 
- <img src="images/newvsold.png" alt="Set-O-Matic vs. ConfigurationManager">
+
+```csharp    
+     int threads;
+     DateTime cutoffDate;
+     string connString;
+
+     //this:
+     threads = Settings.appSettings.MaxThreadCount;
+     cutoffDate = Settings.appSettings.CutoffDate;
+     connString = Settings.connectionStrings.DevDB;
+
+     //instead of this:
+     threads = int.Parse(ConfigurationManager.AppSettings["MaxThreadCount"]);
+     cutoffDate = DateTime.Parse(ConfigurationManager.AppSettings["CutoffDate"]);
+     connString = ConfigurationManager.ConnectionStrings["DeDB"].ConnectionString;
+```
+
 
 ## Why use Set-O-Matic?
 * Fewer application errors
