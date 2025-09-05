@@ -1,4 +1,3 @@
-
 <a id="readme-top"></a>
 <!-- PROJECT SHIELDS -->
 <!-- PROJECT LOGO -->
@@ -7,39 +6,35 @@
 <div align="center">
   <img src="images/SetOMatic.png" alt="Set-O-Matic logo" width="128">
   <h1 align="center">Set-O-Matic</h1>
-
   <p align="center"><strong>
-    Simple strongly-typed settings manager
+    Simple strongly-typed settings provider
   </strong>
   </p>
 </div>
 
 
-<!-- ABOUT THE PROJECT -->
-## About Set-O-Matic
+## What is Set-O-Matic?
 
-As Visual Studio has evolved, the built-in SettingsManager library for .Net Framework projects has fallen far behind in functionality. While nearly all other aspects of code development have been integrated into Intellisense and have become strongly-typed, application settings are still only accessible by default as strings which are not visible via Intellisense. Newer .Net implementations have built-in mapping for configuration settings, but Framework projects still lack this basic tool. Until now. 
+Set-O-Matic is a simple set of T4 templates that automatically creates a strongly-typed Settings class that is dynamically loaded with values from App.config or Web.config at runtime. 
 
-Set-O-Matic is a simple set of T4 templates that, when added to any .Net Framework project via its package installation, automatically creates a strongly-typed Settings class that is dynamically loaded with values from App.config or Web.config at runtime. 
+ <img src="images/newvsold.png" alt="Set-O-Matic vs. ConfigurationManager">
 
 ## Why use Set-O-Matic?
-* Strongly-typed application settings help prevent runtime errors by allowing the compiler to check setting types at compile time
-* As .Net class properties, all settings are available via IntelliSense at design-time, making selecting settings simple and error-free
-* Setting values in the config file are type-checked at first setting access at runtime, preventing invalid settings from falling through the cracks
-* Connection strings are automatically available through the Settings object
+* Fewer application errors
+* All settings (including connection strings) are accessible via IntelliSense
+* No need to cast settings to intended types (settings are strongly-typed)
 * Compiler-checked code is cleaner code. Help the compiler help you!
 
 ## Features
-* Extremely lightweight. Set-O-Matic adds a single folder and two code files (< 200 kb)
-* Completely Automates the importing of all configuration settings into a strongly typed Settings static class
-* Automatically loads the current configuration file setting values at runtime into the Settings object
+* Extremely lightweight. 
+* All settings are automatically available via the *Settings* static class
+* Setting values are automatically retrieved from the config file at runtime
 * Allows the use of IntelliSense to reference all application settings
 * Provides a connectionString child class(es) making all connection strings available via the Settings class
 * Supports custom configuration sections without the need to add any supporting code
 * Seamlessly handles transformed config files since values are loaded at runtime
 * Type-checking at application startup makes it easy to catch invalid values
-* Having strongly typed settings eliminates the need to cast settings throughout the application to match the type they are being used for
-* The ability to select any setting from IntelliSense greatly reduces the chances of "fat-finger" errors when referencing a setting
+* No more casting of int, date, or other non-string values
 * No dependencies to be deployed. All necessary functionality is included in complied application file (.exe)
 * Overall robustness of application code is increased due to fewer opportunities for errors
   
